@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="IPO Scout">
+<title>IPO Scout</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --card: #151a24;
+    --card-2: #1c2330;
+    --border: #262f40;
+    --text: #e8ecf4;
+    --muted: #8b95a8;
+    --green: #2ee6a8;
+    --yellow: #ffc94d;
+    --red: #ff6b6b;
+    --blue: #5aa2ff;
+    --accent: #7c5cff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    padding-bottom: 90px;
+    min-height: 100vh;
+  }
+  header {
+    padding: calc(env(safe-area-inset-top, 0px) + 18px) 18px 12px;
+    display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; background: rgba(11,14,20,.92); backdrop-filter: blur(12px); z-index: 10;
+    border-bottom: 1px solid var(--border);
+  }
+  header h1 { font-size: 20px; letter-spacing: -.3px; }
+  header h1 span { color: var(--accent); }
+  .gear { background: var(--card); border: 1px solid var(--border); color: var(--muted); border-radius: 10px; padding: 8px 12px; font-size: 14px; cursor: pointer; }
+  main { padding: 16px; max-width: 560px; margin: 0 auto; }
+  .banner {
+    background: linear-gradient(135deg, #2a1f3d, #1c2330);
+    border: 1px solid #3a2f55; border-radius: 14px; padding: 12px 14px;
+    font-size: 13px; color: #cbc3e8; margin-bottom: 16px; line-height: 1.45;
+  }
+  .banner.warn { background: #2b1d1d; border-color: #4d2c2c; color: #f0bcbc; }
+  .banner b { color: #fff; }
+  h2.section { font-size: 13px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); margin: 22px 0 10px; }
+  .card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+    padding: 16px; margin-bottom: 12px; cursor: pointer; transition: border-color .15s;
+  }
+  .card.pick { border-color: var(--accent); box-shadow: 0 0 24px rgba(124,92,255,.15); }
+  .pick-tag { display: inline-block; background: var(--accent); color: #fff; font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 99px; margin-bottom: 10px; letter-spacing: .5px; }
+  .row { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+  .cname { font-size: 16px; font-weight: 700; line-height: 1.25; }
+  .csym { color: var(--muted); font-size: 13px; margin-top: 2px; }
+  .score { text-align: center; min-width: 58px; }
+  .score .num { font-size: 24px; font-weight: 800; }
+  .score .lbl { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
+  .g-hot .num, .g-hot .lbl { color: var(--green); }
+  .g-watch .num, .g-watch .lbl { color: var(--yellow); }
+  .g-pass .num, .g-pass .lbl { color: var(--muted); }
+  .meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+  .chip { background: var(--card-2); border: 1px solid var(--border); border-radius: 8px; padding: 4px 9px; font-size: 12px; color: var(--muted); }
+  .chip.hl { color: var(--yellow); border-color: #4d422c; }
+  .detail { display: none; margin-top: 14px; border-top: 1px solid var(--border); padding-top: 14px; }
+  .card.open .detail { display: block; }
+  .detail h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin: 14px 0 8px; }
+  .detail h4:first-child { margin-top: 0; }
+  .why { list-style: none; }
+  .why li { font-size: 13.5px; line-height: 1.5; padding: 6px 0 6px 24px; position: relative; color: #c7cedd; }
+  .why li::before { content: "+"; position: absolute; left: 4px; color: var(--green); font-weight: 700; }
+  .why li.risk::before { content: "!"; color: var(--red); }
+  .holdbox { background: var(--card-2); border-radius: 12px; padding: 12px 14px; font-size: 13.5px; line-height: 1.55; color: #c7cedd; }
+  .holdbox b { color: var(--text); }
+  .links { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+  .links a {
+    flex: 1; min-width: 120px; text-align: center; background: var(--card-2); border: 1px solid var(--border);
+    color: var(--blue); text-decoration: none; font-size: 13px; font-weight: 600; padding: 10px; border-radius: 10px;
+  }
+  .empty { text-align: center; color: var(--muted); padding: 40px 20px; font-size: 14px; line-height: 1.6; }
+  nav {
+    position: fixed; bottom: 0; left: 0; right: 0; display: flex;
+    background: rgba(17,21,30,.95); backdrop-filter: blur(12px); border-top: 1px solid var(--border);
+    padding: 8px 0 calc(env(safe-area-inset-bottom, 0px) + 8px); z-index: 20;
+  }
+  nav button { flex: 1; background: none; border: none; color: var(--muted); font-size: 11px; font-weight: 600; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 3px; }
+  nav button .ic { font-size: 20px; }
+  nav button.active { color: var(--accent); }
+  .tab { display: none; }
+  .tab.active { display: block; }
+  .info-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 16px; margin-bottom: 12px; }
+  .info-card h3 { font-size: 15px; margin-bottom: 6px; }
+  .info-card .tag { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 99px; margin-bottom: 8px; }
+  .tag.real { background: #123528; color: var(--green); }
+  .tag.hard { background: #3a2626; color: var(--red); }
+  .info-card p { font-size: 13.5px; line-height: 1.55; color: #c7cedd; }
+  .info-card p + p { margin-top: 8px; }
+  .info-card a { color: var(--blue); }
+  #settings { display: none; }
+  #settings.show { display: block; }
+  #settings input {
+    width: 100%; background: var(--card-2); border: 1px solid var(--border); border-radius: 10px;
+    color: var(--text); padding: 12px; font-size: 14px; margin: 8px 0;
+  }
+  #settings button.save { width: 100%; background: var(--accent); color: #fff; border: none; border-radius: 10px; padding: 13px; font-size: 15px; font-weight: 700; cursor: pointer; }
+  .loading { text-align: center; color: var(--muted); padding: 30px; font-size: 14px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>IPO <span>Scout</span></h1>
+  <button class="gear" onclick="toggleSettings()">⚙︎ Setup</button>
+</header>
+
+<main>
+  <div id="settings" class="info-card">
+    <h3>Live data setup (2 minutes, free)</h3>
+    <p>1. Go to <a href="https://finnhub.io/register" target="_blank">finnhub.io/register</a> and create a free account.<br>
+       2. Copy your API key from the dashboard.<br>
+       3. Paste it below — the calendar switches from demo data to live data.</p>
+    <input id="apikey" type="text" placeholder="Paste your Finnhub API key" autocomplete="off">
+    <button class="save" onclick="saveKey()">Save & load live IPOs</button>
+  </div>
+
+  <div id="tab-picks" class="tab active">
+    <div class="banner" id="demo-banner"></div>
+    <div id="pick-area"></div>
+    <h2 class="section">Upcoming IPOs — next 30 days</h2>
+    <div id="calendar-area" class="loading">Loading…</div>
+  </div>
+
+  <div id="tab-preipo" class="tab">
+    <div class="banner"><b>Before they go public:</b> these are the real ways a Canadian with a small account can get in before or at the IPO price — ranked by how realistic they are for you today.</div>
+
+    <div class="info-card">
+      <span class="tag real">WORKS WITH ~$100</span>
+      <h3>FrontFundr — Canadian equity crowdfunding</h3>
+      <p>Buy shares in private Canadian startups from as little as $100–$250, before any IPO. This is true pre-public investing, legal for regular (non-accredited) investors.</p>
+      <p><b>The catch:</b> most startups never IPO. Your money can be locked up for years with no way to sell. Treat any single deal as money you can afford to lose entirely.</p>
+      <p><a href="https://www.frontfundr.com" target="_blank">frontfundr.com →</a></p>
+    </div>
+
+    <div class="info-card">
+      <span class="tag real">WORKS WITH A SMALL ACCOUNT</span>
+      <h3>Questrade IPO Centre — new issues at the issue price</h3>
+      <p>Questrade lets you request shares in Canadian IPOs and new issues at the <b>issue price</b> — the price institutions pay, before the stock ever trades. No commission, and no big minimum beyond the cost of the shares.</p>
+      <p><b>The catch:</b> allocation isn't guaranteed (hot deals get oversubscribed), and it's mostly Canadian listings, not US ones.</p>
+      <p><a href="https://www.questrade.com" target="_blank">questrade.com → IPO Centre</a></p>
+    </div>
+
+    <div class="info-card">
+      <span class="tag real">WORKS WITH ~$100 (US STARTUPS)</span>
+      <h3>Wefunder / StartEngine — US equity crowdfunding</h3>
+      <p>Same idea as FrontFundr but for US startups, minimums around US$100. Open to Canadians on most deals.</p>
+      <p><b>The catch:</b> same as above — illiquid for years, most fail. The winners can be huge, but you need many small bets and lots of patience.</p>
+      <p><a href="https://wefunder.com" target="_blank">wefunder.com →</a></p>
+    </div>
+
+    <div class="info-card">
+      <span class="tag hard">NOT YET — NEEDS $10K+ & ACCREDITATION</span>
+      <h3>EquityZen / Forge — late-stage pre-IPO shares</h3>
+      <p>These marketplaces sell shares of big private names (think SpaceX-tier companies) before they list. This is what people usually mean by "pre-IPO investing."</p>
+      <p><b>The catch:</b> you must be an accredited investor and minimums start around US$5,000–10,000. A goal to work toward, not a starting point.</p>
+    </div>
+
+    <div class="banner warn"><b>About those "$2 to $200 in a day" IPOs:</b> those are tiny low-float listings (like HKD in 2022, which spiked +32,000% then fell ~99%). The spike happens because almost no shares trade — and by the time a normal person can buy, the crash is usually next. The calendar tab flags low-float IPOs so you can see them coming, but understand: people who buy the spike are the exit for people who caused it.</div>
+  </div>
+
+  <div id="tab-learn" class="tab">
+    <div class="info-card">
+      <h3>How the score works</h3>
+      <p>Every IPO gets 0–100 based on: <b>float size</b> (fewer shares = bigger potential moves, but bigger crashes), <b>deal size</b> (small deals move more), <b>share price</b> (low-priced IPOs attract momentum traders), <b>exchange</b> (NASDAQ/NYSE get the most attention), and <b>status</b> (a "priced" deal is confirmed; "expected" can slip or cancel).</p>
+      <p><b>70+ = Hot</b> (high volatility potential, high risk) · <b>50–69 = Watch</b> · <b>under 50 = Pass</b>.</p>
+      <p>A high score means "likely to move a lot," <b>not</b> "likely to go up." Volatility cuts both ways.</p>
+    </div>
+    <div class="info-card">
+      <h3>Why you can't buy the IPO price at your broker</h3>
+      <p>The "IPO price" you see in headlines goes to institutions the night before. When trading opens for everyone else, the price has often already jumped — that jump is called the pop, and buying after the pop is where most retail losses happen. The Pre-IPO tab shows the ways around this.</p>
+    </div>
+    <div class="info-card">
+      <h3>The lockup — the date that matters most</h3>
+      <p>Insiders and early investors are banned from selling for ~180 days after the IPO. When that lockup expires, a flood of shares often hits the market and the price dips. If you like a company long-term, the post-lockup dip is frequently a better entry than IPO day.</p>
+    </div>
+    <div class="info-card">
+      <h3>Rules that keep a $100 account alive</h3>
+      <p>1. Never put everything in one deal — one bad IPO shouldn't end you.<br>
+      2. If a low-float IPO spikes and you're somehow in it — sell into strength. They almost never hold the high.<br>
+      3. If you missed the spike, you missed it. Chasing is how small accounts die.<br>
+      4. Paper-trade your first 5 picks (write down entry/exit, don't buy) and check your hit rate before risking real money.</p>
+    </div>
+  </div>
+</main>
+
+<nav>
+  <button class="active" onclick="showTab('picks', this)"><span class="ic">📅</span>IPOs</button>
+  <button onclick="showTab('preipo', this)"><span class="ic">🔐</span>Pre-IPO</button>
+  <button onclick="showTab('learn', this)"><span class="ic">🎓</span>Learn</button>
+</nav>
+
+<script>
+const DEMO_DATA = [
+  { date: offsetDate(3),  exchange: "NASDAQ Global", name: "Nexavolt Energy Systems", numberOfShares: 3200000, price: "4.00-5.00", status: "expected", symbol: "NXVE", totalSharesValue: 14400000 },
+  { date: offsetDate(5),  exchange: "NYSE", name: "Meridian Health Analytics", numberOfShares: 18000000, price: "16.00-18.00", status: "priced", symbol: "MHAI", totalSharesValue: 306000000 },
+  { date: offsetDate(6),  exchange: "NASDAQ Capital", name: "Aurora Robotics Holdings", numberOfShares: 2100000, price: "4.50-6.50", status: "expected", symbol: "AURH", totalSharesValue: 11550000 },
+  { date: offsetDate(11), exchange: "NYSE", name: "Continental Grid Partners", numberOfShares: 42000000, price: "21.00-24.00", status: "expected", symbol: "CGRD", totalSharesValue: 945000000 },
+  { date: offsetDate(14), exchange: "NASDAQ Global", name: "BlueOrigin Biosciences", numberOfShares: 9500000, price: "11.00-13.00", status: "expected", symbol: "BLUB", totalSharesValue: 114000000 },
+  { date: offsetDate(19), exchange: "NASDAQ Capital", name: "Kestrel Micro Devices", numberOfShares: 1500000, price: "4.00-4.00", status: "priced", symbol: "KSTL", totalSharesValue: 6000000 },
+  { date: offsetDate(24), exchange: "NYSE American", name: "Harborline Logistics", numberOfShares: 6000000, price: "8.00-10.00", status: "filed", symbol: "HRBL", totalSharesValue: 54000000 }
+];
+
+function offsetDate(days) {
+  const d = new Date(); d.setDate(d.getDate() + days);
+  return d.toISOString().slice(0, 10);
+}
+
+function getKey() { return localStorage.getItem("finnhub_key") || ""; }
+
+function toggleSettings() {
+  const s = document.getElementById("settings");
+  s.classList.toggle("show");
+  document.getElementById("apikey").value = getKey();
+}
+
+function saveKey() {
+  const v = document.getElementById("apikey").value.trim();
+  if (v) localStorage.setItem("finnhub_key", v); else localStorage.removeItem("finnhub_key");
+  document.getElementById("settings").classList.remove("show");
+  loadIPOs();
+}
+
+function showTab(name, btn) {
+  document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+  document.getElementById("tab-" + name).classList.add("active");
+  document.querySelectorAll("nav button").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+  window.scrollTo(0, 0);
+}
+
+function parsePrice(str) {
+  if (!str) return null;
+  const parts = String(str).split("-").map(parseFloat).filter(n => !isNaN(n));
+  if (!parts.length) return null;
+  return parts.reduce((a, b) => a + b, 0) / parts.length;
+}
+
+function scoreIPO(ipo) {
+  let pts = 0;
+  const why = [];
+  const risks = [];
+  const shares = ipo.numberOfShares || 0;
+  const deal = ipo.totalSharesValue || 0;
+  const price = parsePrice(ipo.price);
+
+  if (shares > 0 && shares < 5e6) {
+    pts += 30;
+    why.push("Very low float (" + fmtNum(shares) + " shares) — the setup behind almost every giant day-one spike. Tiny supply means small buying moves the price violently.");
+    risks.push("Low floats crash as fast as they spike — historically most give back the entire move within days. Never hold one hoping for more.");
+  } else if (shares > 0 && shares < 15e6) {
+    pts += 15;
+    why.push("Smallish float (" + fmtNum(shares) + " shares) — enough scarcity for a real day-one move.");
+  } else if (shares >= 15e6) {
+    why.push("Large float (" + fmtNum(shares) + " shares) — day-one fireworks unlikely; this trades on fundamentals instead.");
+  }
+
+  if (deal > 0 && deal < 5e7) {
+    pts += 20;
+    why.push("Small deal (~$" + fmtNum(deal) + " raised) — flies under institutional radar, moves on retail attention.");
+  } else if (deal >= 5e8) {
+    pts += 10;
+    why.push("Major listing (~$" + fmtNum(deal) + ") — heavy media coverage and index-fund buying interest.");
+  } else if (deal > 0) {
+    pts += 8;
+    why.push("Mid-size deal (~$" + fmtNum(deal) + ").");
+  }
+
+  if (price !== null && price <= 10) {
+    pts += 15;
+    why.push("Priced under $10 — cheap tickets attract momentum traders, and a $100 account can actually buy meaningful shares.");
+  }
+
+  const ex = (ipo.exchange || "").toUpperCase();
+  if (ex.includes("NASDAQ") || ex.includes("NYSE")) {
+    pts += 10;
+    why.push("Listing on " + ipo.exchange + " — maximum visibility and easy to buy from Canadian brokers.");
+  }
+
+  if (ipo.status === "priced") {
+    pts += 15;
+    why.push("Deal is PRICED — confirmed and going ahead, terms locked in.");
+  } else if (ipo.status === "expected") {
+    pts += 8;
+    risks.push("Still 'expected' — date and terms can change or the deal can be pulled.");
+  } else {
+    risks.push("Only filed so far — timing very uncertain.");
+  }
+
+  risks.push("No revenue/profit data in this feed — always read the S-1 filing (link below) before putting in a dollar.");
+
+  return { pts: Math.min(pts, 100), why, risks, shares, deal, price };
+}
+
+function holdPlan(s) {
+  if (s.shares > 0 && s.shares < 5e6 && s.deal < 5e7) {
+    return "<b>Type: volatility play.</b> If this one runs, it's a same-day trade — get out into strength within <b>hours, 1–2 days max</b>. These do not hold their highs. If you miss the move, let it go. Not a long-term investment.";
+  }
+  if (s.deal >= 5e8) {
+    return "<b>Type: major listing.</b> Skip day one (the pop usually fades). If you believe in the company, better entries are the <b>first earnings report (~3 months)</b> or the <b>lockup-expiry dip (~6 months)</b>. Sensible hold: <b>1+ years</b>.";
+  }
+  return "<b>Type: standard IPO.</b> Watch the first week rather than buying the open. If it holds up, a reasonable plan is buy after it stabilizes and hold through <b>the first 1–2 earnings reports (3–6 months)</b>, re-deciding at the ~180-day lockup expiry.";
+}
+
+function fmtNum(n) {
+  if (n >= 1e9) return (n / 1e9).toFixed(1) + "B";
+  if (n >= 1e6) return (n / 1e6).toFixed(1) + "M";
+  if (n >= 1e3) return (n / 1e3).toFixed(0) + "K";
+  return String(n);
+}
+
+function fmtDate(d) {
+  return new Date(d + "T12:00:00").toLocaleDateString("en-CA", { weekday: "short", month: "short", day: "numeric" });
+}
+
+function grade(pts) {
+  if (pts >= 70) return { cls: "g-hot", lbl: "HOT" };
+  if (pts >= 50) return { cls: "g-watch", lbl: "WATCH" };
+  return { cls: "g-pass", lbl: "PASS" };
+}
+
+function cardHTML(ipo, s, isPick) {
+  const g = grade(s.pts);
+  const secLink = "https://efts.sec.gov/LATEST/search-index?q=" + encodeURIComponent(ipo.name);
+  const edgar = "https://www.sec.gov/cgi-bin/browse-edgar?company=" + encodeURIComponent(ipo.name) + "&type=S-1&action=getcompany";
+  const news = "https://news.google.com/search?q=" + encodeURIComponent(ipo.name + " IPO");
+  const lowFloat = s.shares > 0 && s.shares < 5e6;
+  return `<div class="card ${isPick ? "pick" : ""}" onclick="this.classList.toggle('open')">
+    ${isPick ? '<span class="pick-tag">⭐ PICK OF THE WEEK</span>' : ""}
+    <div class="row">
+      <div>
+        <div class="cname">${ipo.name}</div>
+        <div class="csym">${ipo.symbol || "TBD"} · ${ipo.exchange || "TBD"}</div>
+      </div>
+      <div class="score ${g.cls}"><div class="num">${s.pts}</div><div class="lbl">${g.lbl}</div></div>
+    </div>
+    <div class="meta">
+      <span class="chip">📆 ${fmtDate(ipo.date)}</span>
+      ${ipo.price ? `<span class="chip">💲 ${ipo.price}</span>` : ""}
+      ${s.shares ? `<span class="chip">${fmtNum(s.shares)} shares</span>` : ""}
+      <span class="chip">${(ipo.status || "").toUpperCase()}</span>
+      ${lowFloat ? '<span class="chip hl">⚡ LOW FLOAT</span>' : ""}
+    </div>
+    <div class="detail">
+      <h4>Why it scored ${s.pts}</h4>
+      <ul class="why">${s.why.map(w => `<li>${w}</li>`).join("")}</ul>
+      <h4>Risks</h4>
+      <ul class="why">${s.risks.map(r => `<li class="risk">${r}</li>`).join("")}</ul>
+      <h4>Suggested plan</h4>
+      <div class="holdbox">${holdPlan(s)}</div>
+      <div class="links">
+        <a href="${edgar}" target="_blank" onclick="event.stopPropagation()">📄 SEC filing</a>
+        <a href="${news}" target="_blank" onclick="event.stopPropagation()">📰 News</a>
+      </div>
+    </div>
+  </div>`;
+}
+
+function render(list, isDemo) {
+  const banner = document.getElementById("demo-banner");
+  if (isDemo) {
+    banner.style.display = "block";
+    banner.innerHTML = "<b>Demo data shown.</b> Tap <b>⚙︎ Setup</b> (top right) and paste a free Finnhub key to see the real IPO calendar.";
+  } else {
+    banner.style.display = "block";
+    banner.innerHTML = "<b>Live data.</b> Scores measure expected <b>volatility</b>, not guaranteed profit. Tap any card for the full breakdown.";
+  }
+
+  const scored = list
+    .filter(i => i.status !== "withdrawn")
+    .map(i => ({ ipo: i, s: scoreIPO(i) }))
+    .sort((a, b) => a.ipo.date.localeCompare(b.ipo.date));
+
+  const weekCutoff = offsetDate(7);
+  const thisWeek = scored.filter(x => x.ipo.date <= weekCutoff);
+  const pick = (thisWeek.length ? thisWeek : scored).slice().sort((a, b) => b.s.pts - a.s.pts)[0];
+
+  document.getElementById("pick-area").innerHTML = pick ? cardHTML(pick.ipo, pick.s, true) : "";
+  const rest = scored.filter(x => x !== pick);
+  document.getElementById("calendar-area").innerHTML = rest.length
+    ? rest.map(x => cardHTML(x.ipo, x.s, false)).join("")
+    : '<div class="empty">No other IPOs found in the next 30 days.<br>Check back — new deals are announced weekly.</div>';
+  document.getElementById("calendar-area").classList.remove("loading");
+}
+
+async function loadIPOs() {
+  const key = getKey();
+  if (!key) { render(DEMO_DATA, true); return; }
+  document.getElementById("calendar-area").innerHTML = "Loading live IPO calendar…";
+  try {
+    const from = new Date().toISOString().slice(0, 10);
+    const to = offsetDate(30);
+    const r = await fetch(`https://finnhub.io/api/v1/calendar/ipo?from=${from}&to=${to}&token=${key}`);
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    const j = await r.json();
+    const list = (j.ipoCalendar || []).filter(i => i.date >= from);
+    if (!list.length) {
+      document.getElementById("calendar-area").innerHTML = '<div class="empty">No upcoming IPOs in the feed right now. New deals are announced weekly — check back soon.</div>';
+      document.getElementById("pick-area").innerHTML = "";
+      return;
+    }
+    render(list, false);
+  } catch (e) {
+    document.getElementById("calendar-area").innerHTML = '<div class="empty">Couldn\'t load live data (' + e.message + ').<br>Check your API key in ⚙︎ Setup. Showing demo data.</div>';
+    render(DEMO_DATA, true);
+  }
+}
+
+loadIPOs();
+</script>
+</body>
+</html>
