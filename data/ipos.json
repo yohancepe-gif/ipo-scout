@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-20T03:56:33Z",
+ "generated_at": "2026-07-20T16:11:29Z",
  "source": "Nasdaq official IPO calendar",
  "ipoCalendar": [
   {
@@ -144,6 +144,16 @@
   },
   {
    "date": "2026-07-16",
+   "exchange": "NYSE",
+   "name": "Csquare, Inc.",
+   "numberOfShares": 50000000,
+   "price": "21.00",
+   "status": "priced",
+   "symbol": "CSQR",
+   "totalSharesValue": 1050000000.0
+  },
+  {
+   "date": "2026-07-16",
    "exchange": "NASDAQ Global",
    "name": "QumulusAI, Inc.",
    "numberOfShares": 39472531,
@@ -163,14 +173,14 @@
    "totalSharesValue": 150000000.0
   },
   {
-   "date": "2026-07-16",
-   "exchange": "NYSE",
-   "name": "Csquare, Inc.",
-   "numberOfShares": 50000000,
-   "price": "21.00",
+   "date": "2026-07-17",
+   "exchange": "NASDAQ Global",
+   "name": "AMR Resources Acquisition Corp.",
+   "numberOfShares": 25000000,
+   "price": "10.00",
    "status": "priced",
-   "symbol": "CSQR",
-   "totalSharesValue": 1050000000.0
+   "symbol": "AMACU",
+   "totalSharesValue": 250000000.0
   }
  ]
 }
