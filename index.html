@@ -394,6 +394,7 @@ function render(list, isDemo) {
 }
 
 async function loadIPOs() {
+  lastLoad = Date.now();
   const key = getKey();
   if (!key) { render(DEMO_DATA, true); return; }
   document.getElementById("calendar-area").innerHTML = "Loading live IPO calendar…";
@@ -416,7 +417,14 @@ async function loadIPOs() {
   }
 }
 
+let lastLoad = Date.now();
 loadIPOs();
+
+// Re-fetch when the app is reopened after sitting in the background 30+ min,
+// so a home-screen launch never shows a stale calendar.
+document.addEventListener("visibilitychange", () => {
+  if (!document.hidden && Date.now() - lastLoad > 30 * 60 * 1000) loadIPOs();
+});
 </script>
 </body>
 </html>
