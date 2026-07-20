@@ -1,0 +1,24 @@
+name: Update IPO calendar
+
+on:
+  schedule:
+    - cron: "15 10 * * *"   # daily ~6:15 AM Eastern
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch Nasdaq IPO calendar
+        run: python3 scripts/fetch_ipos.py
+      - name: Commit if changed
+        run: |
+          git config user.name "ipo-scout-bot"
+          git config user.email "actions@github.com"
+          git add data/ipos.json
+          git diff --cached --quiet || git commit -m "Daily IPO calendar update"
+          git push

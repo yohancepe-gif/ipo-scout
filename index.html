@@ -117,10 +117,8 @@
 
 <main>
   <div id="settings" class="info-card">
-    <h3>Live data setup (2 minutes, free)</h3>
-    <p>1. Go to <a href="https://finnhub.io/register" target="_blank">finnhub.io/register</a> and create a free account.<br>
-       2. Copy your API key from the dashboard.<br>
-       3. Paste it below — the calendar switches from demo data to live data.</p>
+    <h3>Backup data source (optional)</h3>
+    <p>Live data now comes from the official Nasdaq calendar automatically — <b>no key needed</b>. If you ever want a backup feed: create a free account at <a href="https://finnhub.io/register" target="_blank">finnhub.io/register</a>, copy your API key, and paste it below.</p>
     <input id="apikey" type="text" placeholder="Paste your Finnhub API key" autocomplete="off">
     <button class="save" onclick="saveKey()">Save & load live IPOs</button>
   </div>
@@ -128,7 +126,6 @@
   <div id="tab-picks" class="tab active">
     <div class="banner" id="demo-banner"></div>
     <div id="pick-area"></div>
-    <h2 class="section">Upcoming IPOs — next 30 days</h2>
     <div id="calendar-area" class="loading">Loading…</div>
   </div>
 
@@ -366,55 +363,74 @@ function cardHTML(ipo, s, isPick) {
   </div>`;
 }
 
-function render(list, isDemo) {
+function render(list, isDemo, srcNote) {
   const banner = document.getElementById("demo-banner");
-  if (isDemo) {
-    banner.style.display = "block";
-    banner.innerHTML = "<b>Demo data shown.</b> Tap <b>⚙︎ Setup</b> (top right) and paste a free Finnhub key to see the real IPO calendar.";
-  } else {
-    banner.style.display = "block";
-    banner.innerHTML = "<b>Live data.</b> Scores measure expected <b>volatility</b>, not guaranteed profit. Tap any card for the full breakdown.";
-  }
+  banner.style.display = "block";
+  banner.innerHTML = isDemo
+    ? "<b>Demo data shown.</b> Live data couldn't be reached — try again in a few minutes."
+    : "<b>Live data</b> · " + (srcNote || "") + "<br>Scores measure expected <b>volatility</b>, not guaranteed profit. Tap any card for the full breakdown.";
 
+  const today = offsetDate(0);
+  const recentCutoff = offsetDate(-14);
   const scored = list
-    .filter(i => i.status !== "withdrawn")
-    .map(i => ({ ipo: i, s: scoreIPO(i) }))
-    .sort((a, b) => a.ipo.date.localeCompare(b.ipo.date));
+    .filter(i => i.status !== "withdrawn" && i.date >= recentCutoff)
+    .map(i => ({ ipo: i, s: scoreIPO(i) }));
+
+  const upcoming = scored.filter(x => x.ipo.date >= today).sort((a, b) => a.ipo.date.localeCompare(b.ipo.date));
+  const recent = scored.filter(x => x.ipo.date < today).sort((a, b) => b.ipo.date.localeCompare(a.ipo.date));
 
   const weekCutoff = offsetDate(7);
-  const thisWeek = scored.filter(x => x.ipo.date <= weekCutoff);
-  const pick = (thisWeek.length ? thisWeek : scored).slice().sort((a, b) => b.s.pts - a.s.pts)[0];
+  const pickPool = upcoming.filter(x => x.ipo.date <= weekCutoff);
+  const pick = (pickPool.length ? pickPool : (upcoming.length ? upcoming : recent)).slice().sort((a, b) => b.s.pts - a.s.pts)[0];
 
   document.getElementById("pick-area").innerHTML = pick ? cardHTML(pick.ipo, pick.s, true) : "";
-  const rest = scored.filter(x => x !== pick);
-  document.getElementById("calendar-area").innerHTML = rest.length
-    ? rest.map(x => cardHTML(x.ipo, x.s, false)).join("")
-    : '<div class="empty">No other IPOs found in the next 30 days.<br>Check back — new deals are announced weekly.</div>';
+
+  let html = "";
+  const restUp = upcoming.filter(x => x !== pick);
+  html += '<h2 class="section">Upcoming — next 30 days</h2>';
+  html += restUp.length
+    ? restUp.map(x => cardHTML(x.ipo, x.s, false)).join("")
+    : '<div class="empty">Nothing else announced yet — new deals are announced 1–2 weeks ahead, so quiet stretches are normal. Check back in a few days.</div>';
+  const restRecent = recent.filter(x => x !== pick);
+  if (restRecent.length) {
+    html += '<h2 class="section">Just listed — trading now (last 14 days)</h2>';
+    html += restRecent.map(x => cardHTML(x.ipo, x.s, false)).join("");
+  }
+  document.getElementById("calendar-area").innerHTML = html;
   document.getElementById("calendar-area").classList.remove("loading");
 }
 
 async function loadIPOs() {
   lastLoad = Date.now();
-  const key = getKey();
-  if (!key) { render(DEMO_DATA, true); return; }
-  document.getElementById("calendar-area").innerHTML = "Loading live IPO calendar…";
+
+  // Primary source: official Nasdaq calendar, fetched daily by GitHub Actions
+  // into data/ipos.json alongside this page. No API key needed.
   try {
-    const from = new Date().toISOString().slice(0, 10);
-    const to = offsetDate(30);
-    const r = await fetch(`https://finnhub.io/api/v1/calendar/ipo?from=${from}&to=${to}&token=${key}`);
-    if (!r.ok) throw new Error("HTTP " + r.status);
-    const j = await r.json();
-    const list = (j.ipoCalendar || []).filter(i => i.date >= from);
-    if (!list.length) {
-      document.getElementById("calendar-area").innerHTML = '<div class="empty">No upcoming IPOs in the feed right now. New deals are announced weekly — check back soon.</div>';
-      document.getElementById("pick-area").innerHTML = "";
-      return;
+    const r = await fetch("data/ipos.json?t=" + Date.now());
+    if (r.ok) {
+      const j = await r.json();
+      if ((j.ipoCalendar || []).length) {
+        const updated = (j.generated_at || "").slice(0, 10);
+        render(j.ipoCalendar, false, "official Nasdaq calendar, auto-updated daily (last: " + updated + ")");
+        return;
+      }
     }
-    render(list, false);
-  } catch (e) {
-    document.getElementById("calendar-area").innerHTML = '<div class="empty">Couldn\'t load live data (' + e.message + ').<br>Check your API key in ⚙︎ Setup. Showing demo data.</div>';
-    render(DEMO_DATA, true);
+  } catch (e) { /* fall through to Finnhub */ }
+
+  // Backup source: Finnhub, if the user saved a key in Setup.
+  const key = getKey();
+  if (key) {
+    try {
+      const from = new Date().toISOString().slice(0, 10);
+      const to = offsetDate(30);
+      const r = await fetch(`https://finnhub.io/api/v1/calendar/ipo?from=${from}&to=${to}&token=${key}`);
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      const j = await r.json();
+      if ((j.ipoCalendar || []).length) { render(j.ipoCalendar, false, "Finnhub"); return; }
+    } catch (e) { /* fall through to demo */ }
   }
+
+  render(DEMO_DATA, true);
 }
 
 let lastLoad = Date.now();
