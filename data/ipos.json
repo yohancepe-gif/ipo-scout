@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-21T16:01:46Z",
+ "generated_at": "2026-07-22T15:56:53Z",
  "source": "Nasdaq official IPO calendar",
  "ipoCalendar": [
   {
@@ -181,6 +181,26 @@
    "status": "priced",
    "symbol": "AMACU",
    "totalSharesValue": 250000000.0
+  },
+  {
+   "date": "2026-07-21",
+   "exchange": "NASDAQ Global",
+   "name": "Southern Cross Acquisition I Corp.",
+   "numberOfShares": 10000000,
+   "price": "10.00",
+   "status": "priced",
+   "symbol": "NCOOU",
+   "totalSharesValue": 100000000.0
+  },
+  {
+   "date": "2026-07-21",
+   "exchange": "NASDAQ Global",
+   "name": "B&R Technology Merger Corp.",
+   "numberOfShares": 32500000,
+   "price": "10.00",
+   "status": "priced",
+   "symbol": "BRTMU",
+   "totalSharesValue": 325000000.0
   }
  ]
 }
