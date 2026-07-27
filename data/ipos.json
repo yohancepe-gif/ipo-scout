@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-26T14:50:10Z",
+ "generated_at": "2026-07-27T17:14:09Z",
  "source": "Nasdaq official IPO calendar",
  "ipoCalendar": [
   {
@@ -15,22 +15,22 @@
   {
    "date": "2026-07-01",
    "exchange": "NASDAQ Global Select",
-   "name": "Neutron Holdings, Inc.",
-   "numberOfShares": 6956522,
-   "price": "25.00",
-   "status": "priced",
-   "symbol": "LIME",
-   "totalSharesValue": 173913050.0
-  },
-  {
-   "date": "2026-07-01",
-   "exchange": "NASDAQ Global Select",
    "name": "Bending Spoons S.p.A.",
    "numberOfShares": 57971015,
    "price": "29.00",
    "status": "priced",
    "symbol": "BSP",
    "totalSharesValue": 1681159435.0
+  },
+  {
+   "date": "2026-07-01",
+   "exchange": "NASDAQ Global Select",
+   "name": "Neutron Holdings, Inc.",
+   "numberOfShares": 6956522,
+   "price": "25.00",
+   "status": "priced",
+   "symbol": "LIME",
+   "totalSharesValue": 173913050.0
   },
   {
    "date": "2026-07-01",
@@ -201,6 +201,36 @@
    "status": "priced",
    "symbol": "BRTMU",
    "totalSharesValue": 325000000.0
+  },
+  {
+   "date": "2026-07-24",
+   "exchange": "NASDAQ Global",
+   "name": "Scribe Therapeutics, Inc.",
+   "numberOfShares": 8580000,
+   "price": "15.00",
+   "status": "priced",
+   "symbol": "SCTX",
+   "totalSharesValue": 128700000.0
+  },
+  {
+   "date": "2026-07-24",
+   "exchange": "NASDAQ Capital",
+   "name": "Pelican Acquisition II Corp",
+   "numberOfShares": 7500000,
+   "price": "10.00",
+   "status": "priced",
+   "symbol": "PLCIU",
+   "totalSharesValue": 75000000.0
+  },
+  {
+   "date": "2026-07-24",
+   "exchange": "NASDAQ Global",
+   "name": "Market Technology Acquisition Corp",
+   "numberOfShares": 20000000,
+   "price": "10.00",
+   "status": "priced",
+   "symbol": "MTAKU",
+   "totalSharesValue": 200000000.0
   }
  ]
 }
