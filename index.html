@@ -107,6 +107,28 @@
   }
   #settings button.save { width: 100%; background: var(--accent); color: #fff; border: none; border-radius: 10px; padding: 13px; font-size: 15px; font-weight: 700; cursor: pointer; }
   .loading { text-align: center; color: var(--muted); padding: 30px; font-size: 14px; }
+
+  /* Desktop layout */
+  @media (min-width: 900px) {
+    body { padding-bottom: 110px; }
+    main { max-width: 1100px; }
+    header { padding: 18px 28px 14px; }
+    .card:hover { border-color: #3b4a63; }
+    #pick-area .card.pick { max-width: 720px; margin: 0 auto 12px; }
+    #calendar-area { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 12px; align-items: start; }
+    #calendar-area h2.section, #calendar-area .empty { grid-column: 1 / -1; }
+    #calendar-area .card { margin-bottom: 0; }
+    #tab-preipo.active, #tab-learn.active { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 12px; align-items: start; }
+    #tab-preipo .banner, #tab-learn .banner { grid-column: 1 / -1; margin-bottom: 0; }
+    .info-card { margin-bottom: 0; }
+    nav {
+      left: 50%; right: auto; bottom: 18px; transform: translateX(-50%);
+      width: 380px; border-radius: 99px; border: 1px solid var(--border);
+      padding: 8px 10px; box-shadow: 0 8px 30px rgba(0,0,0,.45);
+    }
+    nav button { border-radius: 99px; padding: 4px 0; }
+    nav button:hover { color: var(--text); }
+  }
 </style>
 </head>
 <body>
