@@ -1,7 +1,17 @@
 {
- "generated_at": "2026-07-28T16:24:53Z",
+ "generated_at": "2026-07-29T16:01:58Z",
  "source": "Nasdaq official IPO calendar",
  "ipoCalendar": [
+  {
+   "date": "2026-07-01",
+   "exchange": "NASDAQ Global",
+   "name": "Osprey Acquisition Corp. III",
+   "numberOfShares": 26100000,
+   "price": "10.00",
+   "status": "priced",
+   "symbol": "OSPRU",
+   "totalSharesValue": 261000000.0
+  },
   {
    "date": "2026-07-01",
    "exchange": "NASDAQ Global Select",
@@ -15,16 +25,6 @@
   {
    "date": "2026-07-01",
    "exchange": "NASDAQ Global Select",
-   "name": "Bending Spoons S.p.A.",
-   "numberOfShares": 57971015,
-   "price": "29.00",
-   "status": "priced",
-   "symbol": "BSP",
-   "totalSharesValue": 1681159435.0
-  },
-  {
-   "date": "2026-07-01",
-   "exchange": "NASDAQ Global Select",
    "name": "Neutron Holdings, Inc.",
    "numberOfShares": 6956522,
    "price": "25.00",
@@ -34,23 +34,13 @@
   },
   {
    "date": "2026-07-01",
-   "exchange": "NASDAQ Global",
-   "name": "Osprey Acquisition Corp. III",
-   "numberOfShares": 26100000,
-   "price": "10.00",
+   "exchange": "NASDAQ Global Select",
+   "name": "Bending Spoons S.p.A.",
+   "numberOfShares": 57971015,
+   "price": "29.00",
    "status": "priced",
-   "symbol": "OSPRU",
-   "totalSharesValue": 261000000.0
-  },
-  {
-   "date": "2026-07-02",
-   "exchange": "NYSE",
-   "name": "Viking Acquisition Corp. II",
-   "numberOfShares": 20000000,
-   "price": "10.00",
-   "status": "priced",
-   "symbol": "VIIU",
-   "totalSharesValue": 200000000.0
+   "symbol": "BSP",
+   "totalSharesValue": 1681159435.0
   },
   {
    "date": "2026-07-02",
@@ -61,6 +51,16 @@
    "status": "priced",
    "symbol": "MIACU",
    "totalSharesValue": 175000000.0
+  },
+  {
+   "date": "2026-07-02",
+   "exchange": "NYSE",
+   "name": "Viking Acquisition Corp. II",
+   "numberOfShares": 20000000,
+   "price": "10.00",
+   "status": "priced",
+   "symbol": "VIIU",
+   "totalSharesValue": 200000000.0
   },
   {
    "date": "2026-07-07",
@@ -205,6 +205,16 @@
   {
    "date": "2026-07-24",
    "exchange": "NASDAQ Global",
+   "name": "Market Technology Acquisition Corp",
+   "numberOfShares": 20000000,
+   "price": "10.00",
+   "status": "priced",
+   "symbol": "MTAKU",
+   "totalSharesValue": 200000000.0
+  },
+  {
+   "date": "2026-07-24",
+   "exchange": "NASDAQ Global",
    "name": "Scribe Therapeutics, Inc.",
    "numberOfShares": 8580000,
    "price": "15.00",
@@ -223,13 +233,23 @@
    "totalSharesValue": 75000000.0
   },
   {
-   "date": "2026-07-24",
+   "date": "2026-07-28",
+   "exchange": "NASDAQ Global Select",
+   "name": "Ionic Digital Inc.",
+   "numberOfShares": 10800164,
+   "price": "",
+   "status": "priced",
+   "symbol": "IOND",
+   "totalSharesValue": 0
+  },
+  {
+   "date": "2026-07-28",
    "exchange": "NASDAQ Global",
-   "name": "Market Technology Acquisition Corp",
+   "name": "Catalyst Acquisition Corp.",
    "numberOfShares": 20000000,
    "price": "10.00",
    "status": "priced",
-   "symbol": "MTAKU",
+   "symbol": "CATLU",
    "totalSharesValue": 200000000.0
   }
  ]
