@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-29T16:01:58Z",
+ "generated_at": "2026-07-30T16:11:09Z",
  "source": "Nasdaq official IPO calendar",
  "ipoCalendar": [
   {
@@ -185,16 +185,6 @@
   {
    "date": "2026-07-21",
    "exchange": "NASDAQ Global",
-   "name": "Southern Cross Acquisition I Corp.",
-   "numberOfShares": 10000000,
-   "price": "10.00",
-   "status": "priced",
-   "symbol": "NCOOU",
-   "totalSharesValue": 100000000.0
-  },
-  {
-   "date": "2026-07-21",
-   "exchange": "NASDAQ Global",
    "name": "B&R Technology Merger Corp.",
    "numberOfShares": 32500000,
    "price": "10.00",
@@ -203,14 +193,14 @@
    "totalSharesValue": 325000000.0
   },
   {
-   "date": "2026-07-24",
+   "date": "2026-07-21",
    "exchange": "NASDAQ Global",
-   "name": "Market Technology Acquisition Corp",
-   "numberOfShares": 20000000,
+   "name": "Southern Cross Acquisition I Corp.",
+   "numberOfShares": 10000000,
    "price": "10.00",
    "status": "priced",
-   "symbol": "MTAKU",
-   "totalSharesValue": 200000000.0
+   "symbol": "NCOOU",
+   "totalSharesValue": 100000000.0
   },
   {
    "date": "2026-07-24",
@@ -233,14 +223,14 @@
    "totalSharesValue": 75000000.0
   },
   {
-   "date": "2026-07-28",
-   "exchange": "NASDAQ Global Select",
-   "name": "Ionic Digital Inc.",
-   "numberOfShares": 10800164,
-   "price": "",
+   "date": "2026-07-24",
+   "exchange": "NASDAQ Global",
+   "name": "Market Technology Acquisition Corp",
+   "numberOfShares": 20000000,
+   "price": "10.00",
    "status": "priced",
-   "symbol": "IOND",
-   "totalSharesValue": 0
+   "symbol": "MTAKU",
+   "totalSharesValue": 200000000.0
   },
   {
    "date": "2026-07-28",
@@ -251,6 +241,26 @@
    "status": "priced",
    "symbol": "CATLU",
    "totalSharesValue": 200000000.0
+  },
+  {
+   "date": "2026-07-28",
+   "exchange": "NASDAQ Global Select",
+   "name": "Ionic Digital Inc.",
+   "numberOfShares": 10800164,
+   "price": "",
+   "status": "priced",
+   "symbol": "IOND",
+   "totalSharesValue": 0
+  },
+  {
+   "date": "2026-07-29",
+   "exchange": "NYSE MKT",
+   "name": "IMC Rare Earths Ltd",
+   "numberOfShares": 4000000,
+   "price": "5.00",
+   "status": "priced",
+   "symbol": "IMC",
+   "totalSharesValue": 20000000.0
   }
  ]
 }
