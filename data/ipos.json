@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-30T16:11:09Z",
+ "generated_at": "2026-07-31T16:27:31Z",
  "source": "Nasdaq official IPO calendar",
  "ipoCalendar": [
   {
@@ -185,22 +185,22 @@
   {
    "date": "2026-07-21",
    "exchange": "NASDAQ Global",
-   "name": "B&R Technology Merger Corp.",
-   "numberOfShares": 32500000,
-   "price": "10.00",
-   "status": "priced",
-   "symbol": "BRTMU",
-   "totalSharesValue": 325000000.0
-  },
-  {
-   "date": "2026-07-21",
-   "exchange": "NASDAQ Global",
    "name": "Southern Cross Acquisition I Corp.",
    "numberOfShares": 10000000,
    "price": "10.00",
    "status": "priced",
    "symbol": "NCOOU",
    "totalSharesValue": 100000000.0
+  },
+  {
+   "date": "2026-07-21",
+   "exchange": "NASDAQ Global",
+   "name": "B&R Technology Merger Corp.",
+   "numberOfShares": 32500000,
+   "price": "10.00",
+   "status": "priced",
+   "symbol": "BRTMU",
+   "totalSharesValue": 325000000.0
   },
   {
    "date": "2026-07-24",
@@ -261,6 +261,36 @@
    "status": "priced",
    "symbol": "IMC",
    "totalSharesValue": 20000000.0
+  },
+  {
+   "date": "2026-07-30",
+   "exchange": "NYSE",
+   "name": "Reformation Inc.",
+   "numberOfShares": 14062500,
+   "price": "15.00",
+   "status": "priced",
+   "symbol": "REF",
+   "totalSharesValue": 210937500.0
+  },
+  {
+   "date": "2026-07-30",
+   "exchange": "NASDAQ Capital",
+   "name": "Game Your Game Inc.",
+   "numberOfShares": 16072730,
+   "price": "",
+   "status": "priced",
+   "symbol": "GYGY",
+   "totalSharesValue": 0
+  },
+  {
+   "date": "2026-07-30",
+   "exchange": "NYSE",
+   "name": "Jersey Mike's Subs Inc.",
+   "numberOfShares": 43478261,
+   "price": "23.00",
+   "status": "priced",
+   "symbol": "JMKE",
+   "totalSharesValue": 1000000003.0
   }
  ]
 }
