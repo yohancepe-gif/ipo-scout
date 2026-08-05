@@ -1,5 +1,26 @@
 {
- "generated_at": "2026-08-04T17:04:45Z",
+ "generated_at": "2026-08-05T16:22:22Z",
  "source": "Nasdaq official IPO calendar",
- "ipoCalendar": []
+ "ipoCalendar": [
+  {
+   "date": "2026-08-04",
+   "exchange": "NASDAQ Global",
+   "name": "BOA Acquisition Corp. II",
+   "numberOfShares": 12500000,
+   "price": "10.00",
+   "status": "priced",
+   "symbol": "THEOU",
+   "totalSharesValue": 125000000.0
+  },
+  {
+   "date": "2026-08-04",
+   "exchange": "NASDAQ Global",
+   "name": "ARC Group Securities Acquisition I",
+   "numberOfShares": 10500000,
+   "price": "10.00",
+   "status": "priced",
+   "symbol": "FJDIU",
+   "totalSharesValue": 105000000.0
+  }
+ ]
 }
