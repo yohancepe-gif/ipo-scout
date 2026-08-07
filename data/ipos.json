@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-05T16:22:22Z",
+ "generated_at": "2026-08-07T12:31:52Z",
  "source": "Nasdaq official IPO calendar",
  "ipoCalendar": [
   {
@@ -21,6 +21,36 @@
    "status": "priced",
    "symbol": "FJDIU",
    "totalSharesValue": 105000000.0
+  },
+  {
+   "date": "2026-08-05",
+   "exchange": "NASDAQ Capital",
+   "name": "TCGX Acquisition Corp.",
+   "numberOfShares": 7500000,
+   "price": "10.00",
+   "status": "priced",
+   "symbol": "TCGX",
+   "totalSharesValue": 75000000.0
+  },
+  {
+   "date": "2026-08-05",
+   "exchange": "NASDAQ Global",
+   "name": "Attovia Therapeutics, Inc.",
+   "numberOfShares": 17000000,
+   "price": "17.00",
+   "status": "priced",
+   "symbol": "ATTO",
+   "totalSharesValue": 289000000.0
+  },
+  {
+   "date": "2026-08-06",
+   "exchange": "NASDAQ Global",
+   "name": "Braveheart Bio, Inc.",
+   "numberOfShares": 21250000,
+   "price": "18.00",
+   "status": "priced",
+   "symbol": "BRVE",
+   "totalSharesValue": 382500000.0
   }
  ]
 }
