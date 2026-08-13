@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-12T14:33:57Z",
+ "generated_at": "2026-08-13T14:34:40Z",
  "source": "Nasdaq official IPO calendar",
  "ipoCalendar": [
   {
@@ -54,23 +54,13 @@
   },
   {
    "date": "2026-08-07",
-   "exchange": "NASDAQ Global Select",
-   "name": "BlossomHill Therapeutics, Inc.",
-   "numberOfShares": 9375000,
-   "price": "16.00",
+   "exchange": "NYSE",
+   "name": "Pinnacle Acquisition Corp",
+   "numberOfShares": 20000000,
+   "price": "10.00",
    "status": "priced",
-   "symbol": "BLSM",
-   "totalSharesValue": 150000000.0
-  },
-  {
-   "date": "2026-08-07",
-   "exchange": "NASDAQ Global Select",
-   "name": "Latigo Biotherapeutics, Inc.",
-   "numberOfShares": 19200000,
-   "price": "18.00",
-   "status": "priced",
-   "symbol": "LTGO",
-   "totalSharesValue": 345600000.0
+   "symbol": "PNAQU",
+   "totalSharesValue": 200000000.0
   },
   {
    "date": "2026-08-07",
@@ -94,13 +84,53 @@
   },
   {
    "date": "2026-08-07",
-   "exchange": "NYSE",
-   "name": "Pinnacle Acquisition Corp",
-   "numberOfShares": 20000000,
-   "price": "10.00",
+   "exchange": "NASDAQ Global Select",
+   "name": "BlossomHill Therapeutics, Inc.",
+   "numberOfShares": 9375000,
+   "price": "16.00",
    "status": "priced",
-   "symbol": "PNAQU",
-   "totalSharesValue": 200000000.0
+   "symbol": "BLSM",
+   "totalSharesValue": 150000000.0
+  },
+  {
+   "date": "2026-08-07",
+   "exchange": "NASDAQ Global Select",
+   "name": "Latigo Biotherapeutics, Inc.",
+   "numberOfShares": 19200000,
+   "price": "18.00",
+   "status": "priced",
+   "symbol": "LTGO",
+   "totalSharesValue": 345600000.0
+  },
+  {
+   "date": "2026-08-12",
+   "exchange": "NASDAQ Capital",
+   "name": "Vogenx, Inc.",
+   "numberOfShares": 6250000,
+   "price": "13.00",
+   "status": "priced",
+   "symbol": "VOGX",
+   "totalSharesValue": 81250000.0
+  },
+  {
+   "date": "2026-08-12",
+   "exchange": "NYSE MKT",
+   "name": "SunScout Holding Ltd",
+   "numberOfShares": 3100000,
+   "price": "5.00",
+   "status": "priced",
+   "symbol": "SNSC",
+   "totalSharesValue": 15500000.0
+  },
+  {
+   "date": "2026-08-12",
+   "exchange": "NYSE",
+   "name": "Londian Wason New Energy Tech Inc.",
+   "numberOfShares": 4300000,
+   "price": "22.00",
+   "status": "priced",
+   "symbol": "FOIL",
+   "totalSharesValue": 94600000.0
   }
  ]
 }
