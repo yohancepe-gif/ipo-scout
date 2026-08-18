@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-17T11:12:08Z",
+ "generated_at": "2026-08-18T11:11:36Z",
  "source": "Nasdaq official IPO calendar",
  "ipoCalendar": [
   {
@@ -126,11 +126,11 @@
    "date": "2026-08-12",
    "exchange": "NYSE",
    "name": "Londian Wason New Energy Tech Inc.",
-   "numberOfShares": 4300000,
+   "numberOfShares": 4285714,
    "price": "22.00",
    "status": "priced",
    "symbol": "FOIL",
-   "totalSharesValue": 94600000.0
+   "totalSharesValue": 94285708.0
   },
   {
    "date": "2026-08-13",
