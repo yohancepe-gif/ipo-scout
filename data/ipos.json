@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-19T11:03:50Z",
+ "generated_at": "2026-08-20T10:48:35Z",
  "source": "Nasdaq official IPO calendar",
  "ipoCalendar": [
   {
@@ -141,6 +141,26 @@
    "status": "priced",
    "symbol": "TBCVU",
    "totalSharesValue": 261000000.0
+  },
+  {
+   "date": "2026-08-18",
+   "exchange": "NASDAQ",
+   "name": "NorthStrive Acquisition Corp I.",
+   "numberOfShares": 10000000,
+   "price": "10.00",
+   "status": "priced",
+   "symbol": "NSAIU",
+   "totalSharesValue": 100000000.0
+  },
+  {
+   "date": "2026-08-18",
+   "exchange": "NASDAQ Global",
+   "name": "Karman Line Acquisition Corp.",
+   "numberOfShares": 20000000,
+   "price": "10.00",
+   "status": "priced",
+   "symbol": "XTERU",
+   "totalSharesValue": 200000000.0
   }
  ]
 }
