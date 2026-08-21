@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-20T10:48:35Z",
+ "generated_at": "2026-08-21T10:48:43Z",
  "source": "Nasdaq official IPO calendar",
  "ipoCalendar": [
   {
@@ -144,7 +144,17 @@
   },
   {
    "date": "2026-08-18",
-   "exchange": "NASDAQ",
+   "exchange": "NASDAQ Global",
+   "name": "Karman Line Acquisition Corp.",
+   "numberOfShares": 20000000,
+   "price": "10.00",
+   "status": "priced",
+   "symbol": "XTERU",
+   "totalSharesValue": 200000000.0
+  },
+  {
+   "date": "2026-08-18",
+   "exchange": "NASDAQ Capital",
    "name": "NorthStrive Acquisition Corp I.",
    "numberOfShares": 10000000,
    "price": "10.00",
@@ -153,14 +163,14 @@
    "totalSharesValue": 100000000.0
   },
   {
-   "date": "2026-08-18",
-   "exchange": "NASDAQ Global",
-   "name": "Karman Line Acquisition Corp.",
-   "numberOfShares": 20000000,
-   "price": "10.00",
+   "date": "2026-08-19",
+   "exchange": "NYSE",
+   "name": "Lyntris Inc.",
+   "numberOfShares": 17000000,
+   "price": "17.50",
    "status": "priced",
-   "symbol": "XTERU",
-   "totalSharesValue": 200000000.0
+   "symbol": "LYNX",
+   "totalSharesValue": 297500000.0
   }
  ]
 }
