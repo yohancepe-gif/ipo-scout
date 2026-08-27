@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-26T10:52:15Z",
+ "generated_at": "2026-08-27T20:32:28Z",
  "source": "Nasdaq official IPO calendar",
  "ipoCalendar": [
   {
@@ -54,16 +54,6 @@
   },
   {
    "date": "2026-08-07",
-   "exchange": "NYSE",
-   "name": "Pinnacle Acquisition Corp",
-   "numberOfShares": 20000000,
-   "price": "10.00",
-   "status": "priced",
-   "symbol": "PNAQU",
-   "totalSharesValue": 200000000.0
-  },
-  {
-   "date": "2026-08-07",
    "exchange": "NYSE MKT",
    "name": "Ticketplus Ltd.",
    "numberOfShares": 1875000,
@@ -71,16 +61,6 @@
    "status": "priced",
    "symbol": "TP",
    "totalSharesValue": 15000000.0
-  },
-  {
-   "date": "2026-08-07",
-   "exchange": "NASDAQ Global",
-   "name": "OceanLight Acquisition Corp",
-   "numberOfShares": 10000000,
-   "price": "10.00",
-   "status": "priced",
-   "symbol": "OCLTU",
-   "totalSharesValue": 100000000.0
   },
   {
    "date": "2026-08-07",
@@ -103,6 +83,36 @@
    "totalSharesValue": 150000000.0
   },
   {
+   "date": "2026-08-07",
+   "exchange": "NASDAQ Global",
+   "name": "OceanLight Acquisition Corp",
+   "numberOfShares": 10000000,
+   "price": "10.00",
+   "status": "priced",
+   "symbol": "OCLTU",
+   "totalSharesValue": 100000000.0
+  },
+  {
+   "date": "2026-08-07",
+   "exchange": "NYSE",
+   "name": "Pinnacle Acquisition Corp",
+   "numberOfShares": 20000000,
+   "price": "10.00",
+   "status": "priced",
+   "symbol": "PNAQU",
+   "totalSharesValue": 200000000.0
+  },
+  {
+   "date": "2026-08-12",
+   "exchange": "NYSE",
+   "name": "Londian Wason New Energy Tech Inc.",
+   "numberOfShares": 4285714,
+   "price": "22.00",
+   "status": "priced",
+   "symbol": "FOIL",
+   "totalSharesValue": 94285708.0
+  },
+  {
    "date": "2026-08-12",
    "exchange": "NASDAQ Capital",
    "name": "Vogenx, Inc.",
@@ -121,16 +131,6 @@
    "status": "priced",
    "symbol": "SNSC",
    "totalSharesValue": 15500000.0
-  },
-  {
-   "date": "2026-08-12",
-   "exchange": "NYSE",
-   "name": "Londian Wason New Energy Tech Inc.",
-   "numberOfShares": 4285714,
-   "price": "22.00",
-   "status": "priced",
-   "symbol": "FOIL",
-   "totalSharesValue": 94285708.0
   },
   {
    "date": "2026-08-13",
@@ -181,6 +181,36 @@
    "status": "priced",
    "symbol": "FBDT",
    "totalSharesValue": 0
+  },
+  {
+   "date": "2026-08-25",
+   "exchange": "NASDAQ Global",
+   "name": "Advasa Holdings, Inc.",
+   "numberOfShares": 94046357,
+   "price": "",
+   "status": "priced",
+   "symbol": "ADBT",
+   "totalSharesValue": 0
+  },
+  {
+   "date": "2026-08-26",
+   "exchange": "NASDAQ Capital",
+   "name": "Southern Cross Acquisition II Corp.",
+   "numberOfShares": 7500000,
+   "price": "10.00",
+   "status": "priced",
+   "symbol": "SCATU",
+   "totalSharesValue": 75000000.0
+  },
+  {
+   "date": "2026-08-26",
+   "exchange": "NASDAQ Capital",
+   "name": "JATT III Acquisition Corp",
+   "numberOfShares": 6000000,
+   "price": "10.00",
+   "status": "priced",
+   "symbol": "JTTT",
+   "totalSharesValue": 60000000.0
   }
  ]
 }
