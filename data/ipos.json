@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-30T14:52:59Z",
+ "generated_at": "2026-08-31T17:38:01Z",
  "source": "Nasdaq official IPO calendar",
  "ipoCalendar": [
   {
@@ -221,6 +221,16 @@
    "status": "priced",
    "symbol": "RNAQU",
    "totalSharesValue": 75000000.0
+  },
+  {
+   "date": "2026-08-28",
+   "exchange": "NASDAQ Global",
+   "name": "Inflection Point Acquisition Corp. VIII",
+   "numberOfShares": 25000000,
+   "price": "10.00",
+   "status": "priced",
+   "symbol": "IPHXU",
+   "totalSharesValue": 250000000.0
   }
  ]
 }
