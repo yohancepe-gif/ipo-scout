@@ -1,5 +1,16 @@
 {
- "generated_at": "2026-09-01T14:55:17Z",
+ "generated_at": "2026-09-02T14:31:01Z",
  "source": "Nasdaq official IPO calendar",
- "ipoCalendar": []
+ "ipoCalendar": [
+  {
+   "date": "2026-09-01",
+   "exchange": "NASDAQ Global",
+   "name": "Three Lions Acquisition Corp.",
+   "numberOfShares": 10000000,
+   "price": "10.00",
+   "status": "priced",
+   "symbol": "TLACU",
+   "totalSharesValue": 100000000.0
+  }
+ ]
 }
