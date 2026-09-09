@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-08T14:33:47Z",
+ "generated_at": "2026-09-09T14:37:42Z",
  "source": "Nasdaq official IPO calendar",
  "ipoCalendar": [
   {
@@ -21,16 +21,6 @@
    "status": "priced",
    "symbol": "TRBG",
    "totalSharesValue": 0
-  },
-  {
-   "date": "2026-09-04",
-   "exchange": "NASDAQ Global",
-   "name": "Leader's Advantage Acquisition Corp.",
-   "numberOfShares": 15000000,
-   "price": "10.00",
-   "status": "priced",
-   "symbol": "LEDRU",
-   "totalSharesValue": 150000000.0
   }
  ]
 }
