@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-20T14:14:13Z",
+ "generated_at": "2026-09-21T16:28:34Z",
  "source": "Nasdaq official IPO calendar",
  "ipoCalendar": [
   {
@@ -31,6 +31,36 @@
    "status": "priced",
    "symbol": "HYACU",
    "totalSharesValue": 250000000.0
+  },
+  {
+   "date": "2026-09-18",
+   "exchange": "NASDAQ Global Select",
+   "name": "Electra Therapeutics, Inc.",
+   "numberOfShares": 23333334,
+   "price": "15.00",
+   "status": "priced",
+   "symbol": "ETRA",
+   "totalSharesValue": 350000010.0
+  },
+  {
+   "date": "2026-09-18",
+   "exchange": "NASDAQ Global",
+   "name": "Leader's Advantage Acquisition Corp.",
+   "numberOfShares": 15000000,
+   "price": "10.00",
+   "status": "priced",
+   "symbol": "LEDRU",
+   "totalSharesValue": 150000000.0
+  },
+  {
+   "date": "2026-09-18",
+   "exchange": "NASDAQ Global Select",
+   "name": "Orion180 Insurance Group Inc.",
+   "numberOfShares": 20000000,
+   "price": "12.00",
+   "status": "priced",
+   "symbol": "OIG",
+   "totalSharesValue": 240000000.0
   }
  ]
 }
