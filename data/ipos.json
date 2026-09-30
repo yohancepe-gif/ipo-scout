@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T16:31:29Z",
+ "generated_at": "2026-09-30T16:25:04Z",
  "source": "Nasdaq official IPO calendar",
  "ipoCalendar": [
   {
@@ -91,6 +91,16 @@
    "status": "priced",
    "symbol": "BRRKU",
    "totalSharesValue": 150000000.0
+  },
+  {
+   "date": "2026-09-29",
+   "exchange": "NASDAQ Capital",
+   "name": "ROZE AI INC.",
+   "numberOfShares": 13878565,
+   "price": "",
+   "status": "priced",
+   "symbol": "RZAI",
+   "totalSharesValue": 0
   }
  ]
 }
