@@ -1,5 +1,26 @@
 {
- "generated_at": "2026-10-01T17:02:19Z",
+ "generated_at": "2026-10-02T16:16:44Z",
  "source": "Nasdaq official IPO calendar",
- "ipoCalendar": []
+ "ipoCalendar": [
+  {
+   "date": "2026-10-01",
+   "exchange": "NASDAQ Capital",
+   "name": "Chilwa Minerals Ltd",
+   "numberOfShares": 625000,
+   "price": "5.60",
+   "status": "priced",
+   "symbol": "CHWM",
+   "totalSharesValue": 3500000.0
+  },
+  {
+   "date": "2026-10-01",
+   "exchange": "NYSE",
+   "name": "Southport Acquisition Corp. II",
+   "numberOfShares": 20000000,
+   "price": "10.00",
+   "status": "priced",
+   "symbol": "PORTU",
+   "totalSharesValue": 200000000.0
+  }
+ ]
 }
