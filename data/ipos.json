@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-11T16:19:59Z",
+ "generated_at": "2026-10-12T19:48:48Z",
  "source": "Nasdaq official IPO calendar",
  "ipoCalendar": [
   {
@@ -31,6 +31,26 @@
    "status": "priced",
    "symbol": "PAXGU",
    "totalSharesValue": 100000000.0
+  },
+  {
+   "date": "2026-10-09",
+   "exchange": "NASDAQ Capital",
+   "name": "Retension Pharmaceuticals, Inc.",
+   "numberOfShares": 3750000,
+   "price": "12.00",
+   "status": "priced",
+   "symbol": "RTSN",
+   "totalSharesValue": 45000000.0
+  },
+  {
+   "date": "2026-10-09",
+   "exchange": "NASDAQ Global Select",
+   "name": "TRex Bio, Inc.",
+   "numberOfShares": 8333334,
+   "price": "14.00",
+   "status": "priced",
+   "symbol": "TRXB",
+   "totalSharesValue": 116666676.0
   }
  ]
 }
