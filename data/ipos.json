@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-14T15:10:33Z",
+ "generated_at": "2026-10-15T15:03:05Z",
  "source": "Nasdaq official IPO calendar",
  "ipoCalendar": [
   {
@@ -34,6 +34,16 @@
   },
   {
    "date": "2026-10-09",
+   "exchange": "NASDAQ Global Select",
+   "name": "TRex Bio, Inc.",
+   "numberOfShares": 8333334,
+   "price": "14.00",
+   "status": "priced",
+   "symbol": "TRXB",
+   "totalSharesValue": 116666676.0
+  },
+  {
+   "date": "2026-10-09",
    "exchange": "NASDAQ Capital",
    "name": "Retension Pharmaceuticals, Inc.",
    "numberOfShares": 3750000,
@@ -43,14 +53,14 @@
    "totalSharesValue": 45000000.0
   },
   {
-   "date": "2026-10-09",
-   "exchange": "NASDAQ Global Select",
-   "name": "TRex Bio, Inc.",
-   "numberOfShares": 8333334,
-   "price": "14.00",
+   "date": "2026-10-14",
+   "exchange": "NASDAQ Capital",
+   "name": "Frazier Life Sciences Acquisition Corp. II",
+   "numberOfShares": 7500000,
+   "price": "10.00",
    "status": "priced",
-   "symbol": "TRXB",
-   "totalSharesValue": 116666676.0
+   "symbol": "FLSC",
+   "totalSharesValue": 75000000.0
   }
  ]
 }
