@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-15T15:03:05Z",
+ "generated_at": "2026-10-16T14:52:35Z",
  "source": "Nasdaq official IPO calendar",
  "ipoCalendar": [
   {
@@ -61,6 +61,26 @@
    "status": "priced",
    "symbol": "FLSC",
    "totalSharesValue": 75000000.0
+  },
+  {
+   "date": "2026-10-15",
+   "exchange": "NASDAQ Global Select",
+   "name": "Iambic Therapeutics, Inc.",
+   "numberOfShares": 9375000,
+   "price": "16.00",
+   "status": "priced",
+   "symbol": "IAM",
+   "totalSharesValue": 150000000.0
+  },
+  {
+   "date": "2026-10-15",
+   "exchange": "NASDAQ Capital",
+   "name": "Amaero Inc.",
+   "numberOfShares": 4705883,
+   "price": "4.25",
+   "status": "priced",
+   "symbol": "AMRO",
+   "totalSharesValue": 20000003.0
   }
  ]
 }
