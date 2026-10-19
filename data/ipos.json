@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-18T14:02:09Z",
+ "generated_at": "2026-10-19T16:59:22Z",
  "source": "Nasdaq official IPO calendar",
  "ipoCalendar": [
   {
@@ -34,16 +34,6 @@
   },
   {
    "date": "2026-10-09",
-   "exchange": "NASDAQ Global Select",
-   "name": "TRex Bio, Inc.",
-   "numberOfShares": 8333334,
-   "price": "14.00",
-   "status": "priced",
-   "symbol": "TRXB",
-   "totalSharesValue": 116666676.0
-  },
-  {
-   "date": "2026-10-09",
    "exchange": "NASDAQ Capital",
    "name": "Retension Pharmaceuticals, Inc.",
    "numberOfShares": 3750000,
@@ -51,6 +41,16 @@
    "status": "priced",
    "symbol": "RTSN",
    "totalSharesValue": 45000000.0
+  },
+  {
+   "date": "2026-10-09",
+   "exchange": "NASDAQ Global Select",
+   "name": "TRex Bio, Inc.",
+   "numberOfShares": 8333334,
+   "price": "14.00",
+   "status": "priced",
+   "symbol": "TRXB",
+   "totalSharesValue": 116666676.0
   },
   {
    "date": "2026-10-14",
@@ -64,6 +64,16 @@
   },
   {
    "date": "2026-10-15",
+   "exchange": "NASDAQ Capital",
+   "name": "Amaero Inc.",
+   "numberOfShares": 4705883,
+   "price": "4.25",
+   "status": "priced",
+   "symbol": "AMRO",
+   "totalSharesValue": 20000003.0
+  },
+  {
+   "date": "2026-10-15",
    "exchange": "NASDAQ Global Select",
    "name": "Iambic Therapeutics, Inc.",
    "numberOfShares": 9375000,
@@ -73,14 +83,24 @@
    "totalSharesValue": 150000000.0
   },
   {
-   "date": "2026-10-15",
-   "exchange": "NASDAQ Capital",
-   "name": "Amaero Inc.",
-   "numberOfShares": 4705883,
-   "price": "4.25",
+   "date": "2026-10-16",
+   "exchange": "NASDAQ Global",
+   "name": "CITY THERAPEUTICS, INC.",
+   "numberOfShares": 11111111,
+   "price": "18.00",
    "status": "priced",
-   "symbol": "AMRO",
-   "totalSharesValue": 20000003.0
+   "symbol": "CTY",
+   "totalSharesValue": 199999998.0
+  },
+  {
+   "date": "2026-10-16",
+   "exchange": "NASDAQ Capital",
+   "name": "TCGX Acquisition Corp. II",
+   "numberOfShares": 10000000,
+   "price": "10.00",
+   "status": "priced",
+   "symbol": "TCXB",
+   "totalSharesValue": 100000000.0
   }
  ]
 }
