@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-22T15:18:08Z",
+ "generated_at": "2026-10-23T15:06:28Z",
  "source": "Nasdaq official IPO calendar",
  "ipoCalendar": [
   {
@@ -34,16 +34,6 @@
   },
   {
    "date": "2026-10-09",
-   "exchange": "NASDAQ Capital",
-   "name": "Retension Pharmaceuticals, Inc.",
-   "numberOfShares": 3750000,
-   "price": "12.00",
-   "status": "priced",
-   "symbol": "RTSN",
-   "totalSharesValue": 45000000.0
-  },
-  {
-   "date": "2026-10-09",
    "exchange": "NASDAQ Global Select",
    "name": "TRex Bio, Inc.",
    "numberOfShares": 8333334,
@@ -51,6 +41,16 @@
    "status": "priced",
    "symbol": "TRXB",
    "totalSharesValue": 116666676.0
+  },
+  {
+   "date": "2026-10-09",
+   "exchange": "NASDAQ Capital",
+   "name": "Retension Pharmaceuticals, Inc.",
+   "numberOfShares": 3750000,
+   "price": "12.00",
+   "status": "priced",
+   "symbol": "RTSN",
+   "totalSharesValue": 45000000.0
   },
   {
    "date": "2026-10-14",
@@ -64,16 +64,6 @@
   },
   {
    "date": "2026-10-15",
-   "exchange": "NASDAQ Capital",
-   "name": "Amaero Inc.",
-   "numberOfShares": 4705883,
-   "price": "4.25",
-   "status": "priced",
-   "symbol": "AMRO",
-   "totalSharesValue": 20000003.0
-  },
-  {
-   "date": "2026-10-15",
    "exchange": "NASDAQ Global Select",
    "name": "Iambic Therapeutics, Inc.",
    "numberOfShares": 9375000,
@@ -81,6 +71,16 @@
    "status": "priced",
    "symbol": "IAM",
    "totalSharesValue": 150000000.0
+  },
+  {
+   "date": "2026-10-15",
+   "exchange": "NASDAQ Capital",
+   "name": "Amaero Inc.",
+   "numberOfShares": 4705883,
+   "price": "4.25",
+   "status": "priced",
+   "symbol": "AMRO",
+   "totalSharesValue": 20000003.0
   },
   {
    "date": "2026-10-16",
@@ -101,6 +101,16 @@
    "status": "priced",
    "symbol": "TCXB",
    "totalSharesValue": 100000000.0
+  },
+  {
+   "date": "2026-10-22",
+   "exchange": "NASDAQ Global",
+   "name": "DAVION HEALTHCARE PLC",
+   "numberOfShares": 25000000,
+   "price": "",
+   "status": "priced",
+   "symbol": "DAVI",
+   "totalSharesValue": 0
   }
  ]
 }
