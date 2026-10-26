@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-25T14:23:16Z",
+ "generated_at": "2026-10-26T16:48:00Z",
  "source": "Nasdaq official IPO calendar",
  "ipoCalendar": [
   {
@@ -111,6 +111,16 @@
    "status": "priced",
    "symbol": "DAVI",
    "totalSharesValue": 0
+  },
+  {
+   "date": "2026-10-23",
+   "exchange": "NASDAQ Global Select",
+   "name": "Lycia Therapeutics, Inc.",
+   "numberOfShares": 17640000,
+   "price": "18.00",
+   "status": "priced",
+   "symbol": "LYCA",
+   "totalSharesValue": 317520000.0
   }
  ]
 }
