@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-27T15:53:15Z",
+ "generated_at": "2026-10-28T16:38:56Z",
  "source": "Nasdaq official IPO calendar",
  "ipoCalendar": [
   {
@@ -121,6 +121,16 @@
    "status": "priced",
    "symbol": "LYCA",
    "totalSharesValue": 317520000.0
+  },
+  {
+   "date": "2026-10-27",
+   "exchange": "NASDAQ Global",
+   "name": "SPACCircle Acquisition Corp.",
+   "numberOfShares": 10000000,
+   "price": "10.00",
+   "status": "priced",
+   "symbol": "SCQCU",
+   "totalSharesValue": 100000000.0
   }
  ]
 }
