@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-29T16:56:09Z",
+ "generated_at": "2026-10-30T16:42:15Z",
  "source": "Nasdaq official IPO calendar",
  "ipoCalendar": [
   {
@@ -131,6 +131,26 @@
    "status": "priced",
    "symbol": "SCQCU",
    "totalSharesValue": 100000000.0
+  },
+  {
+   "date": "2026-10-29",
+   "exchange": "NASDAQ Global",
+   "name": "BHAV Acquisition Corp II",
+   "numberOfShares": 10000000,
+   "price": "10.00",
+   "status": "priced",
+   "symbol": "BHAIU",
+   "totalSharesValue": 100000000.0
+  },
+  {
+   "date": "2026-10-29",
+   "exchange": "NASDAQ Capital",
+   "name": "GEORGIA BANKING CO INC",
+   "numberOfShares": 7074016,
+   "price": "",
+   "status": "priced",
+   "symbol": "GBC",
+   "totalSharesValue": 0
   }
  ]
 }
