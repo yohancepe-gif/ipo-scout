@@ -1,5 +1,16 @@
 {
- "generated_at": "2026-11-02T20:22:26Z",
+ "generated_at": "2026-11-03T17:51:23Z",
  "source": "Nasdaq official IPO calendar",
- "ipoCalendar": []
+ "ipoCalendar": [
+  {
+   "date": "2026-11-02",
+   "exchange": "NASDAQ Capital",
+   "name": "Narragansett Bancorp, Inc.",
+   "numberOfShares": 9098800,
+   "price": "10.00",
+   "status": "priced",
+   "symbol": "NARA",
+   "totalSharesValue": 90988000.0
+  }
+ ]
 }
