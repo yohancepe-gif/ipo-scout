@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T17:13:10Z",
+ "generated_at": "2026-11-16T20:30:12Z",
  "source": "Nasdaq official IPO calendar",
  "ipoCalendar": [
   {
@@ -11,6 +11,36 @@
    "status": "priced",
    "symbol": "NARA",
    "totalSharesValue": 90988000.0
+  },
+  {
+   "date": "2026-11-13",
+   "exchange": "NYSE MKT",
+   "name": "Modern Mining Technology Corp.",
+   "numberOfShares": 9411764,
+   "price": "4.25",
+   "status": "priced",
+   "symbol": "MDRN",
+   "totalSharesValue": 39999997.0
+  },
+  {
+   "date": "2026-11-13",
+   "exchange": "NYSE",
+   "name": "vVARDIS Holding AG",
+   "numberOfShares": 9722223,
+   "price": "18.00",
+   "status": "priced",
+   "symbol": "VVVV",
+   "totalSharesValue": 175000014.0
+  },
+  {
+   "date": "2026-11-13",
+   "exchange": "NASDAQ Global",
+   "name": "WINDWARD BIO GROUP AG",
+   "numberOfShares": 10294117,
+   "price": "17.00",
+   "status": "priced",
+   "symbol": "WWB",
+   "totalSharesValue": 174999989.0
   }
  ]
 }
