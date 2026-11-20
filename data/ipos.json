@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-19T18:59:36Z",
+ "generated_at": "2026-11-20T18:37:42Z",
  "source": "Nasdaq official IPO calendar",
  "ipoCalendar": [
   {
@@ -11,6 +11,16 @@
    "status": "priced",
    "symbol": "NARA",
    "totalSharesValue": 90988000.0
+  },
+  {
+   "date": "2026-11-13",
+   "exchange": "NASDAQ Global",
+   "name": "WINDWARD BIO GROUP AG",
+   "numberOfShares": 10294117,
+   "price": "17.00",
+   "status": "priced",
+   "symbol": "WWB",
+   "totalSharesValue": 174999989.0
   },
   {
    "date": "2026-11-13",
@@ -33,14 +43,14 @@
    "totalSharesValue": 175000014.0
   },
   {
-   "date": "2026-11-13",
-   "exchange": "NASDAQ Global",
-   "name": "WINDWARD BIO GROUP AG",
-   "numberOfShares": 10294117,
-   "price": "17.00",
+   "date": "2026-11-19",
+   "exchange": "NASDAQ Global Select",
+   "name": "Anthropic, PBC",
+   "numberOfShares": 980000000,
+   "price": "83.00",
    "status": "priced",
-   "symbol": "WWB",
-   "totalSharesValue": 174999989.0
+   "symbol": "ANT",
+   "totalSharesValue": 81340000000.0
   }
  ]
 }
